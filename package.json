@@ -1,0 +1,19 @@
+{
+    "name": "average-winner",
+    "version": "1.0.0",
+    "description": "this little exercise takes the scores of 3 three teams in the last three games, calculates the average and then shows who is winning in average",
+    "main": "script.js",
+    "scripts": {
+        "build": "npm run script.js > bundle.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/drood87/average-winner.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/drood87/average-winner/issues"
+    },
+    "homepage": "https://github.com/drood87/average-winner#readme"
+}
