@@ -5,3 +5,82 @@ Author: Daniel Bernstein
 Author URI: https://github.com/drood87/average-winner
 Tags: Javascript, CSS, DOM
 */
+
+/****** Variables *********/
+
+:root {
+    --color-orange: #d47f22;
+    --color-darker-orange: #a95718;
+    font-size: 20px;
+    --font-acme: "Acme", sans-serif;
+    --font-montserrat: "Montserrat", sans-serif;
+}
+
+/****** General Styles *********/
+
+body {
+    background-color: #d47f22;
+}
+
+h1 {
+    font-family: var(--font-acme);
+}
+
+h2 {
+    font-family: var(--font-montserrat);
+    font-size: 0.8rem;
+}
+
+input[type="text"] {
+    height: 2rem;
+    font-family: var(--font-montserrat);
+    padding-left: 1rem;
+    font-weight: 600;
+    -webkit-box-shadow: 7px 6px 23px -5px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 7px 6px 23px -5px rgba(0, 0, 0, 0.75);
+    box-shadow: 7px 6px 23px -5px rgba(0, 0, 0, 0.75);
+    border: none;
+    border-radius: 2px;
+}
+
+button {
+    border: none;
+    border-radius: 0.2rem;
+    width: 12rem;
+    height: 4rem;
+    background-color: var(--color-darker-orange);
+    -webkit-box-shadow: 7px 6px 23px -5px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 7px 6px 23px -5px rgba(0, 0, 0, 0.75);
+    box-shadow: 7px 6px 23px -5px rgba(0, 0, 0, 0.75);
+    font-family: var(--font-montserrat);
+    font-size: 1rem;
+    position: relative;
+}
+
+button:focus {
+    outline: none;
+}
+
+button:active {
+    top: 5px;
+    padding: 11px 10px 9px 10px;
+}
+
+img {
+    display: block;
+    width: 20%;
+}
+
+/****** Header Styles *********/
+
+.heading {
+    text-align: center;
+}
+
+/****** Cards Styles & layout *********/
+
+.cards__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    height: 50rem;
+}
