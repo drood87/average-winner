@@ -12,7 +12,10 @@ function calculateWinner() {
     console.log(`T1 ${average1}, T2 ${average2}, T3 ${average3}`);
 }
 
+// Calculate average for team1
+
 function team1calc() {
+    checkNotEmpty();
     const totalScoreTeam1 = team1scores
         .map(values => Number(values.value))
         .reduce((total, scores) => {
@@ -22,7 +25,10 @@ function team1calc() {
     return averageTeam1;
 }
 
+// Calculate average for team2
+
 function team2calc() {
+    checkNotEmpty();
     const totalScoreTeam2 = team2scores
         .map(values => Number(values.value))
         .reduce((total, scores) => {
@@ -32,7 +38,10 @@ function team2calc() {
     return averageTeam2;
 }
 
+// Calculate average for team3
+
 function team3calc() {
+    checkNotEmpty();
     const totalScoreTeam3 = team3scores
         .map(values => Number(values.value))
         .reduce((total, scores) => {
@@ -40,6 +49,24 @@ function team3calc() {
         }, 0);
     const averageTeam3 = totalScoreTeam3 / 3;
     return averageTeam3;
+}
+
+// Check that field is not empty
+
+function checkNotEmpty() {
+    let empty = false;
+    const regEx = /[^0-9]/;
+    const validation = team1scores.map(items => {
+        if (regEx.test(items.value)) {
+            empty = true;
+            alert(`Enter a number`);
+            return;
+        } else {
+            console.log(`My items else ${items.value}, ${empty}`);
+        }
+    });
+    if (empty) {
+    }
 }
 
 button.addEventListener("click", calculateWinner);

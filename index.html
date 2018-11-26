@@ -1,100 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link
-      href="https://fonts.googleapis.com/css?family=Acme|Montserrat:400,700"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css"
-    />
-    <link rel="stylesheet" href="./assets/style.css" />
-    <title>Average Winner</title>
-  </head>
-  <body>
-    <h1 class="heading">Winner Winner Chicken Dinner</h1>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <link
+            href="https://fonts.googleapis.com/css?family=Acme|Montserrat:400,700"
+            rel="stylesheet"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css"
+        />
+        <link rel="stylesheet" href="./assets/style.css" />
+        <title>Average Winner</title>
+    </head>
+    <body>
+        <h1 class="heading">Winner Winner Chicken Dinner</h1>
 
-    <div class="cards__wrapper">
-      <div class="card">
-        <h2 class="card__title">Team 1</h2>
-        <div class="card__scores">
-          <input
-            type="text"
-            name="score1"
-            id="team1score"
-            placeholder="Score Game 1"
-          />
-          <input
-            type="text"
-            name="score2"
-            id="team1score"
-            placeholder="Score Game 2"
-          />
-          <input
-            type="text"
-            name="score3"
-            id="team1score"
-            placeholder="Score Game 3"
-          />
+        <div class="cards__wrapper">
+            <div class="card">
+                <h2 class="card__title">Team 1</h2>
+                <div class="card__scores">
+                    <input
+                        type="text"
+                        name="score1"
+                        id="team1score"
+                        placeholder="Score Game 1"
+                        required
+                    />
+                    <input
+                        type="text"
+                        name="score2"
+                        id="team1score"
+                        placeholder="Score Game 2"
+                        required
+                    />
+                    <input
+                        type="text"
+                        name="score3"
+                        id="team1score"
+                        placeholder="Score Game 3"
+                        required
+                    />
+                </div>
+            </div>
+            <div class="card">
+                <h2 class="card__title">Team 2</h2>
+                <div class="card__scores">
+                    <input
+                        type="text"
+                        name="score1"
+                        id="team2score"
+                        placeholder="Score Game 1"
+                        required
+                    />
+                    <input
+                        type="text"
+                        name="score2"
+                        id="team2score"
+                        placeholder="Score Game 2"
+                        required
+                    />
+                    <input
+                        type="text"
+                        name="score3"
+                        id="team2score"
+                        placeholder="Score Game 3"
+                        required
+                    />
+                </div>
+            </div>
+            <div class="card">
+                <h2 class="card__title">Team 3</h2>
+                <div class="card__scores">
+                    <input
+                        type="text"
+                        name="score1"
+                        id="team3score"
+                        placeholder="Score Game 1"
+                        required
+                    />
+                    <input
+                        type="text"
+                        name="score2"
+                        id="team3score"
+                        placeholder="Score Game 2"
+                        required
+                    />
+                    <input
+                        type="text"
+                        name="score3"
+                        id="team3score"
+                        placeholder="Score Game 3"
+                        required
+                    />
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="card">
-        <h2 class="card__title">Team 2</h2>
-        <div class="card__scores">
-          <input
-            type="text"
-            name="score1"
-            id="team2score"
-            placeholder="Score Game 1"
-          />
-          <input
-            type="text"
-            name="score2"
-            id="team2score"
-            placeholder="Score Game 2"
-          />
-          <input
-            type="text"
-            name="score3"
-            id="team2score"
-            placeholder="Score Game 3"
-          />
-        </div>
-      </div>
-      <div class="card">
-        <h2 class="card__title">Team 3</h2>
-        <div class="card__scores">
-          <input
-            type="text"
-            name="score1"
-            id="team3score"
-            placeholder="Score Game 1"
-          />
-          <input
-            type="text"
-            name="score2"
-            id="team3score"
-            placeholder="Score Game 2"
-          />
-          <input
-            type="text"
-            name="score3"
-            id="team3score"
-            placeholder="Score Game 3"
-          />
-        </div>
-      </div>
-    </div>
-    <button class="calculate " value="Winner">Winner</button>
-    <img
-      src="Basketball_BFB.png"
-      alt="Basketball"
-      class="animated bounce infinite"
-    />
-    <script src="script.js"></script>
-  </body>
+        <button class="calculate " value="Winner">Winner</button>
+        <img
+            src="Basketball_BFB.png"
+            alt="Basketball"
+            class="animated bounce infinite"
+        />
+        <script src="script.js"></script>
+    </body>
 </html>
