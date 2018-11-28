@@ -3,7 +3,6 @@ const team2scores = Array.from(document.querySelectorAll("#team2score"));
 const team3scores = Array.from(document.querySelectorAll("#team3score"));
 const p = document.querySelector("p");
 const img = document.querySelector("img");
-
 const button = document.querySelector("button");
 
 function calculateWinner() {
@@ -11,17 +10,35 @@ function calculateWinner() {
     const average2 = team2calc();
     const average3 = team3calc();
 
-    if (average1 > average2 && average3) {
-        img.classList.add("bounceOut");
-        img.classList.remove("infinite");
+    if (average1 > (average2 && average3)) {
+        const points = average1;
+        const winner = "Team 1";
+        animateFadeInOut(points, winner);
+    } else if (average2 > (average1 && average3)) {
+        const points = average2;
+        const winner = "Team 2";
+        animateFadeInOut(points, winner);
+    } else if (average3 > (average1 && average2)) {
+        const points = average3;
+        const winner = "Team 3";
+        animateFadeInOut(points, winner);
+    }
+}
+
+function animateFadeInOut(points, winner) {
+    img.classList.add("bounceOut");
+    img.classList.remove("infinite");
+    setTimeout(function() {
         let p = document.createElement("p");
-        p.setAttribute("class", "flip");
-        const text = document.createTextNode("Hello");
+        p.setAttribute("class", "animated rollIn");
+        const text = document.createTextNode(
+            `And the Winner is: ${winner} with an average ${Math.round(
+                points
+            )} points in the last 3 games!!`
+        );
         p.appendChild(text);
         img.replaceWith(p);
-    }
-    console.log(`T1 ${average1}, T2 ${average2}, T3 ${average3}`);
-    window.requestAnimationFrame(calculateWinner);
+    }, 700);
 }
 
 // Calculate average for team1
