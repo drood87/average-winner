@@ -6,10 +6,12 @@ const img = document.querySelector("img");
 const button = document.querySelector("button");
 
 function calculateWinner() {
-    debugger;
     const average1 = team1calc();
+    throwError(average1);
     const average2 = team2calc();
+    throwError(average2);
     const average3 = team3calc();
+    throwError(average3);
 
     if (average1 > (average2 && average3)) {
         const points = average1;
@@ -23,6 +25,13 @@ function calculateWinner() {
         const points = average3;
         const winner = "Team 3";
         animateFadeInOut(points, winner);
+    }
+}
+
+function throwError(average) {
+    if (average == NaN) {
+        alert("type a number");
+        return;
     }
 }
 
@@ -75,6 +84,7 @@ function team2calc() {
 function team3calc() {
     const value3 = team3scores.map(values => values.value);
     checkNotEmpty(value3);
+    console.log(checkNotEmpty(value3));
     const totalScoreTeam3 = team3scores
         .map(values => Number(values.value))
         .reduce((total, scores) => {
@@ -87,13 +97,18 @@ function team3calc() {
 // Check that field is not empty
 
 function checkNotEmpty(scores) {
-    testInput(scores);
+    return testInput(scores);
 }
 
 function testInput(scores) {
     const regEx = /[0-9]/;
     console.log(regEx.test(scores));
-    return regEx.test(scores);
+    scores.forEach(score => {
+        if (!regEx.test(score)) {
+            return score;
+        }
+    });
+    // return score;
 }
 
 button.addEventListener("click", calculateWinner);
