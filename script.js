@@ -92,6 +92,7 @@ function checkNotEmpty(scores) {
 
 function testInput(scores) {
     const regEx = /[0-9]/;
+    console.log(regEx.test(scores));
     return regEx.test(scores);
 }
 
