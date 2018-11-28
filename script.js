@@ -6,6 +6,7 @@ const img = document.querySelector("img");
 const button = document.querySelector("button");
 
 function calculateWinner() {
+    debugger;
     const average1 = team1calc();
     const average2 = team2calc();
     const average3 = team3calc();
@@ -44,7 +45,8 @@ function animateFadeInOut(points, winner) {
 // Calculate average for team1
 
 function team1calc() {
-    // checkNotEmpty();
+    const value1 = team1scores.map(values => values.value);
+    checkNotEmpty(value1);
     const totalScoreTeam1 = team1scores
         .map(values => Number(values.value))
         .reduce((total, scores) => {
@@ -57,7 +59,8 @@ function team1calc() {
 // Calculate average for team2
 
 function team2calc() {
-    // checkNotEmpty();
+    const value2 = team2scores.map(values => values.value);
+    checkNotEmpty(value2);
     const totalScoreTeam2 = team2scores
         .map(values => Number(values.value))
         .reduce((total, scores) => {
@@ -70,7 +73,8 @@ function team2calc() {
 // Calculate average for team3
 
 function team3calc() {
-    // checkNotEmpty();
+    const value3 = team3scores.map(values => values.value);
+    checkNotEmpty(value3);
     const totalScoreTeam3 = team3scores
         .map(values => Number(values.value))
         .reduce((total, scores) => {
@@ -82,27 +86,13 @@ function team3calc() {
 
 // Check that field is not empty
 
-// function checkNotEmpty() {
-//     let empty = false;
-//     const scoreValues = getValues();
-//     const regEx = /\d/;
-//     empty = scoreValues.some(score => regEx.test(score) === true);
-//     console.log(empty);
-//     if (!empty) {
-//         alert(`Type a number`);
-//     }
-// }
+function checkNotEmpty(scores) {
+    testInput(scores);
+}
 
-// function getValues() {
-//     const team1Values = team1scores.map(scores => scores.value);
-//     return team1Values;
-// }
+function testInput(scores) {
+    const regEx = /[0-9]/;
+    return regEx.test(scores);
+}
 
 button.addEventListener("click", calculateWinner);
-// if (regEx.test(items.value)) {
-//             empty = true;
-//             alert("BOOOP");
-//             if (empty) return;
-//         } else {
-//             console.log("BoopELSE");
-//         }
