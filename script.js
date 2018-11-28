@@ -7,11 +7,10 @@ const button = document.querySelector("button");
 
 function calculateWinner() {
     const average1 = team1calc();
-    throwError(average1);
+
     const average2 = team2calc();
-    throwError(average2);
+
     const average3 = team3calc();
-    throwError(average3);
 
     if (average1 > (average2 && average3)) {
         const points = average1;
@@ -28,12 +27,12 @@ function calculateWinner() {
     }
 }
 
-function throwError(average) {
-    if (average == NaN) {
-        alert("type a number");
-        return;
-    }
-}
+// function throwError(average) {
+//     if (average == NaN) {
+//         alert("type a number");
+//         return;
+//     }
+// }
 
 function animateFadeInOut(points, winner) {
     img.classList.add("bounceOut");
@@ -55,7 +54,7 @@ function animateFadeInOut(points, winner) {
 
 function team1calc() {
     const value1 = team1scores.map(values => values.value);
-    checkNotEmpty(value1);
+    // checkNotEmpty(value1);
     const totalScoreTeam1 = team1scores
         .map(values => Number(values.value))
         .reduce((total, scores) => {
@@ -69,7 +68,7 @@ function team1calc() {
 
 function team2calc() {
     const value2 = team2scores.map(values => values.value);
-    checkNotEmpty(value2);
+    // checkNotEmpty(value2);
     const totalScoreTeam2 = team2scores
         .map(values => Number(values.value))
         .reduce((total, scores) => {
@@ -83,8 +82,7 @@ function team2calc() {
 
 function team3calc() {
     const value3 = team3scores.map(values => values.value);
-    checkNotEmpty(value3);
-    console.log(checkNotEmpty(value3));
+    // checkNotEmpty(value3);
     const totalScoreTeam3 = team3scores
         .map(values => Number(values.value))
         .reduce((total, scores) => {
@@ -96,19 +94,19 @@ function team3calc() {
 
 // Check that field is not empty
 
-function checkNotEmpty(scores) {
-    return testInput(scores);
-}
+// function checkNotEmpty(scores) {
+//     return testInput(scores);
+// }
 
-function testInput(scores) {
-    const regEx = /[0-9]/;
-    console.log(regEx.test(scores));
-    scores.forEach(score => {
-        if (!regEx.test(score)) {
-            return score;
-        }
-    });
-    // return score;
-}
+// function testInput(scores) {
+//     const regEx = /[0-9]/;
+//     console.log(regEx.test(scores));
+//     scores.forEach(score => {
+//         if (!regEx.test(score)) {
+//             return score;
+//         }
+//     });
+//     // return score;
+// }
 
 button.addEventListener("click", calculateWinner);
